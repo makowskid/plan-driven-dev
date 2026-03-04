@@ -1,4 +1,4 @@
-# Plan-Driven Dev -- Claude Code Skill
+# Plan-Driven Dev - Claude Code Skill
 
 A Claude Code skill that enforces a disciplined **Research > Plan > Annotate > Implement** workflow for building apps and features. Prevents Claude from writing code before you've reviewed and approved a written plan.
 

@@ -25,46 +25,39 @@ The skill triggers automatically on keywords like "build", "implement", "create"
 
 ## Install
 
-Pick whichever method works for you:
+Skills in Claude Code are filesystem-based. Place the skill directory where Claude Code can discover it. Pick the scope that fits your needs:
 
-### Option 1: Git clone (global -- works across all projects)
+### Option 1: Personal skill (global -- works across all your projects)
 
 ```bash
 git clone https://github.com/makowskid/plan-driven-dev.git ~/.claude/skills/plan-driven-dev
 ```
 
-### Option 2: Git clone (project-level -- shared with team via git)
+### Option 2: Project skill (shared with team via version control)
 
 ```bash
 git clone https://github.com/makowskid/plan-driven-dev.git .claude/skills/plan-driven-dev
 ```
 
-### Option 3: Claude Code Plugin
+Then commit `.claude/skills/plan-driven-dev/` to your repo so the whole team gets the skill automatically.
+
+### Option 3: Manual
+
+Download `SKILL.md` from this repo and place it at:
 
 ```
-/plugin marketplace add makowskid/plan-driven-dev
+~/.claude/skills/plan-driven-dev/SKILL.md
 ```
-
-### Option 4: agr (community package manager)
-
-```bash
-pip install agr
-agr add makowskid/plan-driven-dev
-```
-
-### Option 5: Manual
-
-Download `SKILL.md` and drop it into `~/.claude/skills/plan-driven-dev/SKILL.md`.
 
 ## Verify Installation
 
-Start Claude Code and ask:
+Start Claude Code and type `/` to open the skill menu. You should see `plan-driven-dev` in the list. You can also invoke it directly:
 
 ```
-What skills are available?
+/plan-driven-dev
 ```
 
-You should see `plan-driven-dev` in the list. Then try:
+Or just ask Claude to build something:
 
 ```
 Build a REST API for user management
@@ -101,6 +94,8 @@ Not every task needs the full workflow:
 
 ## Update
 
+If installed via git clone:
+
 ```bash
 cd ~/.claude/skills/plan-driven-dev && git pull
 ```
@@ -110,6 +105,8 @@ cd ~/.claude/skills/plan-driven-dev && git pull
 ```bash
 rm -rf ~/.claude/skills/plan-driven-dev
 ```
+
+For project-level installs, remove `.claude/skills/plan-driven-dev/` from your repo and commit.
 
 ## Credits
 
